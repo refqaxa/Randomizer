@@ -1,0 +1,55 @@
+﻿@model RandomizerMvc.Models.HannaModels.RandomPinModel
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="col-md-12 text-center">
+
+    <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Over deze opdracht
+
+        <i class="bi bi-arrow-down-right"></i>
+    </button>
+    <div class="collapse" id="collapseExample">
+        <br />
+
+        <div class="card card-body border border-primary">
+            
+Deze opdracht heeft één instelling waar je een getal kunt invoeren om de lengte van de pincode te bepalen. Een pincode bestaat alleen uit cijfers, en het is ook mogelijk dat de pincode begint met het cijfer 0.
+        </div>
+    </div>
+</div>
+
+
+<br />
+
+<form asp-action="RandomPincode" asp-controller="HannaMvc" method="get">
+  
+    <div class="form-group p-3">
+        <label class="mb-2 h6" asp-for="UserChoice">lenght:</label>
+        
+        <input asp-for="UserChoice" min="1" class="form-control" type="number" id="UserChoice" name="UserChoice" />
+
+    <br />
+    <button type="submit" class="btn btn-primary">Generate a pincode</button>
+    <br />
+    </div>
+
+
+</form>
+
+@if (ViewBag.RandomPin != null)
+{
+    <div class="p-3">
+            <h4>Random pincode:</h4>
+            <p>@ViewBag.RandomPin</p>
+    </div>
+}
+else
+{
+    <div class="p-3">
+        <p>pls provide a value</p>
+    </div>
+}

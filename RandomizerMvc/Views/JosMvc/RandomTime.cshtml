@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "_Layout";
+}
+<div class="col-md-12 text-center">
+
+    <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Over deze opdracht
+
+        <i class="bi bi-arrow-down-right"></i>
+    </button>
+    <div class="collapse" id="collapseExample">
+        <br />
+
+        <div class="card card-body border border-primary">
+            Deze code genereert random time
+        </div>
+    </div>
+</div>
+<br />
+
+<h2>
+    @ViewBag.RandomTime
+
+</h2>

@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Dice Index";
+}
+<div class="col-md-12 text-center">
+
+    <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Over deze opdracht
+
+        <i class="bi bi-arrow-down-right"></i>
+    </button>
+    <div class="collapse" id="collapseExample">
+        <br />
+
+        <div class="card card-body border border-primary">
+Deze code genereert een reeks dobbelsteenworpen op basis van het aantal dobbelstenen dat de gebruiker opgeeft.
+</div>
+    </div>
+</div>
+<br />
+
+<h2>Roll the dice!</h2>
+
+<form asp-controller="RefqaMvc" asp-action="RollDice" method="post">
+    <label for="numberOfDice">Number of Dice:</label>
+    <input type="number" id="numberOfDice" name="numberOfDice" min="1" required>
+    <button type="submit">Roll Dice</button>
+</form>

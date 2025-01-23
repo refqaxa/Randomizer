@@ -1,0 +1,60 @@
+﻿@{
+    Layout = "_Layout";
+}
+@model RandomizerMvc.Models.HannaModels.RandomDateModel.TwoParameter
+
+    
+<div class="col-md-12 text-center">
+
+    <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Over deze opdracht
+
+        <i class="bi bi-arrow-down-right"></i>
+    </button>
+    <div class="collapse" id="collapseExample">
+        <br />
+
+        <div class="card card-body border border-primary">
+           
+             deze geeft een random datum tussen twee op te geven datums
+
+        </div>
+    </div>
+</div>
+<br />
+    <form action="/HannaMvc/RandomDateTwoPara" method="get">
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger m-0" role="alert">
+            @Html.ValidationSummary()
+        </div>
+    }
+    <br />
+        <div class="form-group">
+        <label class="control-label" for="FirstUserDateChoice">User Date Choice:</label>
+        <br />
+        <input asp-for="FirstUserDateChoice" class="form-control" type="date" id="FirstUserDateChoice" name="FirstUserDateChoice" />
+        <br />
+        <span class="text-danger"></span>
+        </div>
+    <div class="form-group">
+        <label class="control-label" for="SecondUserDateChoice">User Date Choice:</label>
+        <br />
+        <input asp-for="SecondUserDateChoice" class="form-control" type="date" id="SecondUserDateChoice" name="SecondUserDateChoice" />
+        <br />
+        <span class="text-danger"></span>
+    </div>
+
+        <button type="submit" class="btn btn-primary">Get Random Date</button>
+
+    </form>
+
+    <div class="result">
+    <br />
+        @if (ViewBag.RandomDate != null)
+        {
+            <h4>Random Date: @ViewBag.RandomDate</h4>
+        }
+    </div>
+

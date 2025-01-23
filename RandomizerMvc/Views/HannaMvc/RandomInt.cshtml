@@ -1,0 +1,51 @@
+﻿@model RandomizerMvc.Models.HannaModels.RandomIntModel
+
+@{
+    Layout = "_Layout";
+}
+<div class="col-md-12 text-center">
+
+    <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Over deze opdracht
+
+        <i class="bi bi-arrow-down-right"></i>
+    </button>
+    <div class="collapse" id="collapseExample">
+        <br />
+
+        <div class="card card-body border border-primary">
+            Deze methode maakt een willekeurig getal, en als je negatieve getallen wilt, check je dan de checkbox 'allowNegative'.
+
+        </div>
+    </div>
+</div>
+
+<br />
+
+<h2>Random Getal</h2>
+
+<form asp-action="RandomInt" asp-controller="HannaMvc" method="get">
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger m-0" role="alert">
+            @Html.ValidationSummary()
+        </div>
+    }
+    <div class="form-group">
+        <label asp-for="UserChoice" name="UserChoice" id="UserChoice"> Allow Negative:</label>
+        <input asp-for="UserChoice" type="checkbox" />
+     
+        <input type="submit" value="Generate Random Int" class="btn btn-primary m-1" />
+    </div>
+
+</form>
+ <br />
+@if (ViewBag.RandomInt != null)
+{
+    <div>
+        <h4>Random number:</h4>
+        <p>@ViewBag.RandomInt</p>
+    </div>
+}

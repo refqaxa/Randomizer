@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "_Layout";
+}
+<div class="col-md-12 text-center">
+
+    <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Over deze opdracht
+
+        <i class="bi bi-arrow-down-right"></i>
+    </button>
+    <div class="collapse" id="collapseExample">
+        <br />
+
+        <div class="card card-body border border-primary">
+het geeft je een willekeurige datum tussen 1 januari 1900 en de huidige datum.        </div>
+    </div>
+</div>
+<br />
+
+
+
+
+
+<h2 class="text-center p-5">
+    @ViewBag.RandomDate
+
+</h2>
+
+
+

@@ -1,0 +1,58 @@
+﻿@model RandomizerMvc.Models.HannaModels.RandomDateModel.OneParameter
+
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewData["Title"] = "Random Date with one input";
+}
+
+<div class="col-md-12 text-center">
+
+    <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Over deze opdracht
+
+        <i class="bi bi-arrow-down-right"></i>
+    </button>
+    <div class="collapse" id="collapseExample">
+        <br />
+
+        <div class="card card-body border border-primary">
+            geeft een random datum tussen de opgegeven datum en de
+            huidige datum
+        </div>
+    </div>
+</div>
+
+
+
+
+    <form action="/HannaMvc/RandomDateOnePara" method="get">
+    <br />
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger m-0" role="alert">
+            @Html.ValidationSummary()
+        </div>
+    }
+    <br />
+    <div class="form-group">
+        <label class="control-label mb-3" for="UserDateChoice">User Date Choice:</label>
+        <input asp-for="UserDateChoice" class="form-control" type="date" id="UserDateChoice" name="UserDateChoice" />
+        <br />
+@*        <span asp-validation-for="UserDateChoice" class="text-danger"></span>
+*@    </div>
+
+        <button type="submit" class="btn btn-primary">Get Random Date</button>
+    </form>
+
+<br />
+
+    <div class="result">
+    @if (ViewBag.RandomDate != null)
+        {
+            <h4>Random Date: @ViewBag.RandomDate</h4>
+        }
+    </div>
+

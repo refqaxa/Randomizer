@@ -1,0 +1,118 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="text-center">
+    <h1 class="display-4 blinking_text m-4">Welcome to Randomizer</h1>
+    <h4 data-toggle="tooltip" data-placement="top" title="Tooltip">Life is random <i class="bi bi-dice-3"></i></h4>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <a class="nav-link" asp-area="" asp-controller="HannaMvc" asp-action="RandomInt">Random getal</a>
+        </div>
+        <div class="col-md-6 text-center">
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle" type="button" id="randomDropdown" data-bs-toggle="dropdown">
+                    Random datum
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="randomDropdown">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="HannaMvc" asp-action="RandomDateNoPara">Random datum with <span class="text-primary">No</span> input</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " asp-area="" asp-controller="HannaMvc" asp-action="RandomDateOnePara">Random datum with <span class="text-primary">One</span> input</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " asp-area="" asp-controller="HannaMvc" asp-action="RandomDateTwoPara">Random datum with <span class="text-primary">Two</span> input</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-1">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <a class="nav-link" asp-area="" asp-controller="RefqaMvc" asp-action="Index">Random dobbelstenen</a>
+        </div>
+        <div class="col-md-6 text-center">
+            <a class="nav-link" asp-area="" asp-controller="RefqaMvc" asp-action="RandomText">Random teksten</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-2">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <a class="nav-link" asp-area="" asp-controller="RefqaMvc" asp-action="RandomFirstNames">Random voornaam</a>
+        </div>
+        <div class="col-md-6 text-center">
+            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Random naam</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-2">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Random kaart</a>
+        </div>
+        <div class="col-md-6 text-center">
+            <button class="btn dropdown-toggle" type="button" id="randomDropdown" data-bs-toggle="dropdown">
+                Random Password
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="randomDropdown">
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="JosMvc" asp-action="RandomPasswordOnePara">Random Password with <span class="text-primary">One</span> input</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="JosMvc" asp-action="RandomPasswordFourPara">Random Password with <span class="text-primary">Four</span> input</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="JosMvc" asp-action="RandomPasswordFivePara">Random Password with <span class="text-primary">Five</span> input</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-2">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <a class="nav-link" asp-area="" asp-controller="HannaMvc" asp-action="RandomPincode">Random pincode</a>
+        </div>
+        <div class="col-md-6 text-center">
+            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Random kleur</a>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-2">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <a class="nav-link" asp-area="" asp-controller="JosMvc" asp-action="RandomLocation">Random locatie op de wereld</a>
+        </div>
+        <div class="col-md-6 text-center">
+            <a class="nav-link" asp-area="" asp-controller="JosMvc" asp-action="RandomTime">Random tijd</a>
+        </div>
+    </div>
+</div>
+<div class="container mt-2">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <a class="nav-link" asp-area="" asp-controller="HannaMvc" asp-action="RandomSeason">Random seizoen</a>
+        </div>
+        <div class="col-md-6 text-center">
+            <a class="nav-link" asp-area="" asp-controller="RefqaMvc" asp-action="RandomStudentOrTeacher">Random docent of student</a>
+        </div>
+    </div>
+</div>
+

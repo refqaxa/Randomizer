@@ -1,0 +1,81 @@
+.blinking_text {
+    text-shadow: 0 0 5px #0399ad, 0 0 15px #0399ad, 0 0 20px #0399ad, 0 0 40px #0399ad, 0 0 60px #0399ad, 0 0 10px #0399ad, 0 0 98px #6103ad;
+    color: #32fbe3;
+    animation: blink 10s infinite;
+    -webkit-animation: blink 10s infinite;
+}
+
+@-webkit-keyframes blink {
+
+    20%, 24%, 55% {
+        color: #111;
+        text-shadow: none;
+    }
+
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 0 0 5px #0399ad, 0 0 15px #0399ad, 0 0 20px #0399ad, 0 0 40px #0399ad, 0 0 60px #6103ad, 0 0 10px #02f5d8, 0 0 98px #6103ad;
+        color: #32fbe3;
+    }
+}
+
+@keyframes blink {
+
+    20%, 24%, 55% {
+        color: #100;
+        text-shadow: none;
+    }
+
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 0 0 5px #0399ad, 0 0 15px #0399ad, 0 0 20px #0399ad, 0 0 40px #0399ad, 0 0 60px #6103ad, 0 0 10px #02f5d8, 0 0 98px #6103ad;
+        color: #32fbe3;
+    }
+}
+
+
+.nav-link:hover {
+    display: inline-block;
+    position: relative;
+    color: #32fbe2;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #32fbe2;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav-link:hover {
+    display: inline-block;
+    position: relative;
+    color: #32fbe2;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #32fbe2;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

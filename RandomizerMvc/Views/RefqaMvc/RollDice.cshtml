@@ -1,0 +1,15 @@
+﻿@model int[]
+
+<h2>Dice Rolls</h2>
+@if(ViewBag.TooSmall == null){
+<ul>
+    @foreach (var roll in Model)
+    {
+        <li>
+            <img src="~/images/Dices/dice@(roll).webp" alt="Dice @(roll)" />
+        </li>
+    }
+</ul>
+} else{
+    <h4 style="color:red;">@ViewBag.TooSmall</h4>
+}

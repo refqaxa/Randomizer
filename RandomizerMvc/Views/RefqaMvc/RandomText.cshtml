@@ -1,0 +1,61 @@
+﻿@model RandomizerMvc.Models.RefqaModels.RandomTextModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Random Text";
+}
+
+<div class="col-md-12 text-center">
+
+    <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Over deze opdracht
+
+        <i class="bi bi-arrow-down-right"></i>
+    </button>
+    <div class="collapse" id="collapseExample">
+        <br />
+
+        <div class="card card-body border border-primary">
+            Deze code genereert een opgegeven aantal alinea's (maximaal 10) uit een tekstbestand, waarbij de gebruiker kan kiezen tussen Nederlandse of Lorem Ipsum-tekst, evenals de output als HTML-code.        </div>
+    </div>
+</div>
+<br />
+
+
+<h2>Generate Random Text</h2>
+
+<form asp-controller="RefqaMvc" asp-action="GenerateText" method="post">
+    <div class="form-group">
+        <label asp-for="ParagraphsAmount"></label>
+        <input asp-for="ParagraphsAmount" class="form-control" />
+        <span asp-validation-for="ParagraphsAmount" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="InDutch">In Nederlands?</label>
+        <select asp-for="InDutch" class="form-control" required>
+            <option value="True">Ja</option>
+            <option value="False">Nee</option>
+        </select>
+        <span asp-validation-for="InDutch" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AsHtml">Format as HTML?</label>
+        <select asp-for="AsHtml" class="form-control" required>
+            <option value="True">Ja</option>
+            <option value="False">Nee</option>
+        </select>
+        <span asp-validation-for="AsHtml" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Generate Text</button>
+</form>
+
+<div class="result">
+    @if (ViewBag.GeneratedText != null)
+    {
+        <h4>Generated Text:</h4>
+        <p>@Html.Raw(ViewBag.GeneratedText)</p>
+    }
+</div>

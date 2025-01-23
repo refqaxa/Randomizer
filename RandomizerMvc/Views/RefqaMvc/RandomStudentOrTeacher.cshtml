@@ -1,0 +1,44 @@
+﻿@model RandomizerMvc.Models.RefqaModels.RandomPerson
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Generate Random Person";
+}
+<div class="col-md-12 text-center">
+
+    <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Over deze opdracht
+
+        <i class="bi bi-arrow-down-right"></i>
+    </button>
+    <div class="collapse" id="collapseExample">
+        <br />
+
+        <div class="card card-body border border-primary">
+            Deze code creëert lijsten met studenten en docenten, waarbij elk individu een automatisch toegewezen ID heeft. Daarnaast bevat de code een methode waarmee de gebruiker willekeurig een student, docent of persoon kan selecteren en de informatie in JSON-formaat kan verkrijgen.
+        </div>
+    </div>
+</div>
+<br />
+
+<h2>Generate Random Person</h2>
+
+<form asp-controller="RefqaMvc" asp-action="GeneratePerson" method="post">
+    <div class="form-group">
+        <label asp-for="PersonType">Select Person Type:</label>
+        <select asp-for="PersonType" asp-items="new SelectList(ViewBag.PersonTypeOptions)">
+            <option value="">Select...</option>
+        </select>
+        <span asp-validation-for="PersonType" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Generate Person</button>
+</form>
+
+<div class="result">
+    @if (!string.IsNullOrEmpty(ViewBag.GeneratedPerson))
+    {
+        <h4>Generated Person:</h4>
+        <pre>@ViewBag.GeneratedPerson</pre>
+    }
+</div>
